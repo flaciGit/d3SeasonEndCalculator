@@ -11,5 +11,4 @@ data conversion to date type
 command line arguments
 season end date calculations with average, median and addition
 
-
-![alt text](https://github.com/flaciGit/pacManWithJS/blob/master/img/d3SeasonEndCalculator.png)
+![alt text](https://github.com/flaciGit/d3SeasonEndCalculator/blob/master/img/d3SeasonEndCalculator.png)
