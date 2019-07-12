@@ -10,7 +10,6 @@
 #	season end date calculations with average, median and addition
 
 import argparse
-import sys
 from lxml import html
 import requests
 import statistics
@@ -37,15 +36,15 @@ def d3SeasonEndCalculator(inDepth):
 	page = requests.get('https://diablo.fandom.com/wiki/Season')
 	tree = html.fromstring(page.content)
 	
-	buyers = tree.xpath('//table[@class="article-table"]/tr//td/text()')
+	seasonDates = tree.xpath('//table[@class="article-table"]/tr//td/text()')
 	
 	#extract dates from data
 	i = 1
 	data = []
-	while(i < len(buyers)):
+	while(i < len(seasonDates)):
 		
-		if(buyers[i].strip()):
-			data.append(buyers[i].strip())
+		if(seasonDates[i].strip()):
+			data.append(seasonDates[i].strip())
 		if(i%3 == 0):
 			i+=4
 		else:
