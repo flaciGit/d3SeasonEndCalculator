@@ -82,53 +82,53 @@ def d3SeasonEndCalculator(inDepth):
 	for x in seasonLengths:
 		sum += x
 		
-	print("\t",sum // len(seasonLengths),"days")
+	print("\t" + str(sum // len(seasonLengths)) + " days")
 	
 	if(inDepth):
 		#Average season length without the longest season
 		print("\n\tAverage season length without the longest:")
-		print("\t",(sum - max(seasonLengths)) // (len(seasonLengths)-1),"days")
+		print("\t" + str((sum - max(seasonLengths)) // (len(seasonLengths)-1)) + " days")
 		
 		#Average season length without the shortest season
 		print("\n\tAverage season length without the shortest:")
-		print("\t",(sum - min(seasonLengths)) // (len(seasonLengths)-1),"days")
+		print("\t" + str((sum - min(seasonLengths)) // (len(seasonLengths)-1)) + " days")
 		
 		#Average season length without the longest and shortest season
 		print("\n\tAverage season length without the longest and shortest season:")
-		print("\t",(sum - max(seasonLengths) - min(seasonLengths)) // (len(seasonLengths)-2),"days")
+		print("\t" + str((sum - max(seasonLengths) - min(seasonLengths)) // (len(seasonLengths)-2)) + " days")
 		
 		#median
 		print("\n\tMedian of the season lengths:")
-		print("\t",statistics.median(seasonLengths),"days")
+		print("\t" + str(statistics.median(seasonLengths)) + " days")
 
 	#estimated season end date
 	print("\n\tAverage season end date:")
-	print("\t", datetime.strptime(data[len(data)-1], '%d %b %Y').date() + timedelta(days=(sum // len(seasonLengths))))
+	print("\t" + str(datetime.strptime(data[len(data)-1], '%d %b %Y').date() + timedelta(days=(sum // len(seasonLengths)))))
 	
 
 	if(inDepth):
 		#Average season end date without the longest season
 		print("\n\tAverage season end date without the longest:")
-		print("\t",datetime.strptime(data[len(data)-1], '%d %b %Y').date() +  timedelta((sum - max(seasonLengths)) // (len(seasonLengths)-1)))
+		print("\t" + str(datetime.strptime(data[len(data)-1], '%d %b %Y').date() +  timedelta((sum - max(seasonLengths)) // (len(seasonLengths)-1))))
 		
 		#Average season end date without the shortest season
 		print("\n\tAverage season end date without the shortest:")
-		print("\t",datetime.strptime(data[len(data)-1], '%d %b %Y').date() +  timedelta((sum - min(seasonLengths)) // (len(seasonLengths)-1)))
+		print("\t" + str(datetime.strptime(data[len(data)-1], '%d %b %Y').date() +  timedelta((sum - min(seasonLengths)) // (len(seasonLengths)-1))))
 		
 		
 		#Average season end date without the longest and shortest season
 		print("\n\tAverage season end date without the longest and shortest season:")
-		print("\t",datetime.strptime(data[len(data)-1], '%d %b %Y').date() +
-			timedelta((sum - max(seasonLengths) - min(seasonLengths)) // (len(seasonLengths)-2)))
+		print("\t" + str(datetime.strptime(data[len(data)-1], '%d %b %Y').date() +
+			timedelta((sum - max(seasonLengths) - min(seasonLengths)) // (len(seasonLengths)-2))))
 		
 		#Season end date with the median
 		print("\n\tSeason end date with the median of the season lengths:")
-		print("\t",datetime.strptime(data[len(data)-1], '%d %b %Y').date() + timedelta(statistics.median(seasonLengths)))
+		print("\t" + str(datetime.strptime(data[len(data)-1], '%d %b %Y').date() + timedelta(statistics.median(seasonLengths))))
 		
 		
 	#season end with the simple addition of 90 days to the start date
 	print("\n\tSeason end date with the addition of 90 days:")
-	print("\t",datetime.strptime(data[len(data)-1], '%d %b %Y').date() + timedelta(90))
+	print("\t" + str(datetime.strptime(data[len(data)-1], '%d %b %Y').date() + timedelta(90)))
 		
 		
 		
