@@ -11,8 +11,11 @@
 
 import argparse
 from lxml import html
+# pip install --upgrade lxml
 import requests
+# pip install requests
 import statistics
+# pip install statistics 
 from datetime import datetime, timedelta
 
 #command line argument parsing
